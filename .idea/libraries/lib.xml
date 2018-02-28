@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/lib" />
+      <root url="jar://$USER_HOME$/Movies/java大神/03_JDBC/04_JDBC/jar包/驱动包/mysql-connector-java-5.1.36.jar!/" />
+      <root url="jar://$USER_HOME$/Movies/java大神/03_JDBC/04_JDBC/jar包/druid/druid-1.0.15.jar!/" />
+      <root url="jar://$USER_HOME$/Movies/java大神/01_java基础加强/01基础加强/资料/lombok-1.16.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/web/lib" recursive="false" />
+  </library>
+</component>

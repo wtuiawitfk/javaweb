@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="javaweb" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/lib/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/lib/taglibs-standard-spec-1.2.5.jar" />
+          <element id="library" level="project" name="lib" />
+        </element>
       </element>
     </root>
   </artifact>

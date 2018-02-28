@@ -21,4 +21,17 @@
         <servlet-name>initServlet</servlet-name>
         <url-pattern>/initServlet</url-pattern>
     </servlet-mapping>
+
+    <!--配置全局参数-->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+
+    <!--配置全局错误页面-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
 </web-app>
