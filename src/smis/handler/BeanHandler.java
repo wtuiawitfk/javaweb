@@ -1,4 +1,4 @@
-package smis.Handler;
+package smis.handler;
 
 import smis.dao.IResultHandler;
 
@@ -6,21 +6,19 @@ import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
-public class ListHandler<T> implements IResultHandler {
+public class BeanHandler<T> implements IResultHandler {
     private Class<T> classType;
 
-    public ListHandler(Class classType) {
+    public BeanHandler(Class classType) {
         this.classType = classType;
     }
+
     @Override
-    public List<T> handle(ResultSet res) throws Exception {
-        List<T> objs = new ArrayList<>();
-        while (res.next()) {
+    public T handle(ResultSet res) throws Exception {
+        if (res.next()) {
             T obj = classType.newInstance();
-            BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass(), Object.class);
+            BeanInfo beanInfo = Introspector.getBeanInfo(classType, Object.class);
             PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
             for (PropertyDescriptor pd :
                     pds) {
@@ -28,8 +26,8 @@ public class ListHandler<T> implements IResultHandler {
                 Object value = res.getObject(name);
                 pd.getWriteMethod().invoke(obj, value);
             }
-            objs.add(obj);
+            return obj;
         }
-        return objs;
+        return null;
     }
 }

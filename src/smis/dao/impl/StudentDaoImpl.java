@@ -1,7 +1,7 @@
 package smis.dao.impl;
 
-import smis.Handler.BeanHandler;
-import smis.Handler.ListHandler;
+import smis.handler.BeanHandler;
+import smis.handler.ListHandler;
 import smis.dao.IStudentDao;
 import smis.domain.Student;
 import smis.template.JdbcTemplate;
